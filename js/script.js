@@ -55,14 +55,14 @@ for(let index in allCards){
   const cardImg = card.immagine;
   const cardName = card.nome;
   const cardRole = card.ruolo;
-  console.log('----->');
+  
   console.log(cardImg);
   console.log(cardName);
   console.log(cardRole);
+  console.log('----->');
 
   //genero html
-  for (let key in card){
-     htmlText += `
+  htmlText += `
       <div class="team-card">
        <div class="card-image">
         <img src="${cardImg}"/>
@@ -73,8 +73,6 @@ for(let index in allCards){
         </div>
       </div>
       `;
-
-  }
 }
 console.log(htmlText);
 
