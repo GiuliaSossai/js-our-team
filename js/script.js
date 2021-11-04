@@ -45,9 +45,9 @@ const allCards = [
   }
 ]
 
-//eseguo ciclo su array per leggerne contenuto
 let htmlText = '';
 
+//eseguo ciclo su array per leggerne contenuto
 for(let index in allCards){
   const card = allCards[index];
   console.log('card', card);
@@ -61,7 +61,7 @@ for(let index in allCards){
   console.log(cardRole);
   console.log('----->');
 
-  //genero html
+  //genero html chiamando la funzione
   htmlText += `
       <div class="team-card">
        <div class="card-image">
@@ -73,13 +73,18 @@ for(let index in allCards){
         </div>
       </div>
       `;
+  
 }
-console.log(htmlText);
+
 
 //stampo il contenuto in html
 document.querySelector('.team-container').innerHTML = htmlText
 
 
-// const nuovaCard = {
-//   
-// }
+
+
+//creo funzione per generare html
+function generateHtml(){
+  
+}
+  
