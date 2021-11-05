@@ -13,32 +13,32 @@
 //creo array di oggetti/card
 const allCards = [
   {
-    immagine:'wayne-barnett-founder-ceo.jpg',
+    immagine:'img/wayne-barnett-founder-ceo.jpg',
     nome:'Wayne Barnett',
     ruolo:'Founder & CEO'
   },
   {
-    immagine:'angela-caroll-chief-editor.jpg',
+    immagine:'img/angela-caroll-chief-editor.jpg',
     nome:'Angela Caroll',
     ruolo:'Chief Editor'
   },
   {
-    immagine:'walter-gordon-office-manager.jpg',
+    immagine:'img/walter-gordon-office-manager.jpg',
     nome:'Walter Gordon',
     ruolo:'Office Manager'
   },
   {
-    immagine:'angela-lopez-social-media-manager.jpg',
+    immagine:'img/angela-lopez-social-media-manager.jpg',
     nome:'Angela Lopez',
     ruolo:'Social Media Manager'
   },
   {
-    immagine:'scott-estrada-developer.jpg',
+    immagine:'img/scott-estrada-developer.jpg',
     nome:'Scott Estrada',
     ruolo:'Developer'
   },
   {
-    immagine:'barbara-ramos-graphic-designer.jpg',
+    immagine:'img/barbara-ramos-graphic-designer.jpg',
     nome:'Barbara Ramos',
     ruolo:'Graphic Designer'
   }
@@ -56,20 +56,20 @@ function takeTeam (){
   document.querySelector('.team-container').innerHTML = '';
 
   //eseguo ciclo su array per leggerne contenuto
-  for(let member in allCards){
-    // const card = allCards[index];
-    // console.log('card', card);
+  for(let index in allCards){
+    const card = allCards[index];
+    console.log('card', card);
 
-    // const cardImg = card.immagine;
-    // const cardName = card.nome;
-    // const cardRole = card.ruolo;
+    const cardImg = card.immagine;
+    const cardName = card.nome;
+    const cardRole = card.ruolo;
     
-    // console.log(cardImg);
-    // console.log(cardName);
-    // console.log(cardRole);
-    // console.log('----->');
+    console.log(cardImg);
+    console.log(cardName);
+    console.log(cardRole);
+    console.log('----->');
 
-    generateHtml(member);  
+    generateHtml(card);  
   }
   
 }
@@ -89,13 +89,14 @@ function generateHtml(member){
 
   //destrutturo oggetto
   const {immagine, nome, ruolo} = member;
+  console.log('member', member);
 
   //definisco struttura html
   prevContent +=
   `
   <div class="team-card">
     <div class="card-image">
-      <img src="img/${immagine}"/>
+      <img src="${immagine}"/>
     </div>
     <div class="card-text">
       <h3>${nome}</h3>
@@ -116,18 +117,16 @@ function addMember(){
   //creo l'oggetto
   //invio oggetto creato alla funzione generateHTML
 
-  const immagineNew = document.getElementById('image').ariaValueMax;
-  const nomeNew = document.getElementById('name').ariaValueMax;
-  const ruoloNew = document.getElementById('role').ariaValueMax;
+  const nomeNew = document.getElementById('name').value;
+  const ruoloNew = document.getElementById('role').value;
+  const immagineNew = document.getElementById('image').value;
 
   const newMember = {
-    image: immagineNew,
-    name: nomeNew,
-    role: ruoloNew
+    immagine: immagineNew,
+    nome: nomeNew,
+    ruolo: ruoloNew
   }
-
+  console.log('nuovo membro', newMember);
   generateHtml(newMember)
-  
-
 }
   
